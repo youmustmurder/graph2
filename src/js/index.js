@@ -12,11 +12,6 @@ window.onload = function() {
       nodes = json.nodes;
       links = json.links;
       render();
-      if (check()) {
-        console.log(false);
-      } else {
-        console.log(true);
-      }
     });
 
   canvas = document.getElementById('viewport');
@@ -62,7 +57,7 @@ window.onload = function() {
     let result;
     nodes.forEach(function(node) {
       var halfWidth = 15,
-        halfHeight = 15;
+          halfHeight = 15;
       if ((pos.x >= node.x - halfWidth) && (pos.x < node.x + halfWidth) && (pos.y >= node.y - halfHeight) && (pos.y < node.y + halfHeight)) {
         result = node;
       }
@@ -120,8 +115,7 @@ window.onload = function() {
         var A2 = (p3.y - p4.y) / (p3.x - p4.x);
         var b2 = p3.y - A2 * p3.x;
         var Ya = A2 * Xa + b2;
-        if (p3.x <= Xa && p4.x >= Xa && Math.min(p1.y, p2.y) <= Ya &&
-                Math.max(p1.y, p2.y) >= Ya) {
+        if (p3.x <= Xa && p4.x >= Xa && Math.min(p1.y, p2.y) <= Ya && Math.max(p1.y, p2.y) >= Ya) {
             return true;
         }
         return false;
@@ -172,7 +166,7 @@ window.onload = function() {
     if (check()) {
       console.log(false);
     } else {
-      console.log(true);
+      alert('Вы выиграли');
     }
   }, false);
 
